@@ -5,11 +5,11 @@ import "./SearchSelect.css";
 type SearchSelectListItemProps = {
   searchValue: string;
   user: User;
-  fireSelectedUser: (user: User) => void;
+  valueChange: (user: User) => void;
 };
 
 export default function SearchSelectListItem({
-  fireSelectedUser,
+  valueChange,
   searchValue,
   user,
 }: SearchSelectListItemProps) {
@@ -25,7 +25,7 @@ export default function SearchSelectListItem({
     return <>{parse(newName)}</>;
   }
   return (
-    <li onClick={() => fireSelectedUser(user)} className="SearchSelectListItem">
+    <li onClick={() => valueChange(user)} className="SearchSelectListItem">
       {stylize()}
     </li>
   );

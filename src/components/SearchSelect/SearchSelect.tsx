@@ -68,7 +68,7 @@ export default function SearchSelect() {
             {displayedUsers.map((user, userindex) => {
               return (
                 <SearchSelectListItem
-                  fireSelectedUser={handleSelectedItem}
+                  valueChange={handleSelectedItem}
                   user={user}
                   key={userindex}
                   searchValue={searchValue}
