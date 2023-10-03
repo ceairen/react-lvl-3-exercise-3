@@ -23,10 +23,6 @@ export default function MainLeft() {
     );
   }
 
-  function handleUserSelected(user: CustomUser) {
-    setSelectedUser(user);
-  }
-
   useEffect(() => {
     loadUsers();
   }, []);
@@ -41,7 +37,7 @@ export default function MainLeft() {
           <CustomSelect
             data={users}
             dataFilteredKey={"name"}
-            dataSelected={handleUserSelected}
+            dataSelected={setSelectedUser}
           />
         )}
       </div>

@@ -2,17 +2,17 @@ import { useEffect, useState } from "react";
 import "./CustomSelect.css";
 import CustomSelectItem from "./CustomSelectItem";
 
-type CustomSelectProps<T extends Object, K extends keyof T> = {
+type CustomSelectProps<T extends Object> = {
   data: T[];
   dataFilteredKey: string;
   dataSelected: (obj: T) => void;
 };
 
-export default function CustomSelect<T extends Object, K extends keyof T>({
+export default function CustomSelect<T extends Object>({
   data,
   dataFilteredKey,
   dataSelected,
-}: CustomSelectProps<T, K>) {
+}: CustomSelectProps<T>) {
   const [displayedData, setDisplayedData] = useState<string[] | null>(null);
   const [searchValue, setSearchValue] = useState<string>("");
 
