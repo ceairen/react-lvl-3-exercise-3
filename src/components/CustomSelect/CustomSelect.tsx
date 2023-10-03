@@ -3,12 +3,14 @@ import "./CustomSelect.css";
 import CustomSelectItem from "./CustomSelectItem";
 
 type CustomSelectProps<T extends Object> = {
+  customPlaceholder?: string;
   data: T[];
   dataFilteredKey: string;
   dataSelected: (obj: T) => void;
 };
 
 export default function CustomSelect<T extends Object>({
+  customPlaceholder,
   data,
   dataFilteredKey,
   dataSelected,
@@ -53,7 +55,7 @@ export default function CustomSelect<T extends Object>({
       <input
         type="text"
         onChange={(e) => setSearchValue(e.target.value)}
-        placeholder="Search any data..."
+        placeholder={customPlaceholder ? customPlaceholder : "Search any data..."}
         value={searchValue}
       />
       {displayedData &&

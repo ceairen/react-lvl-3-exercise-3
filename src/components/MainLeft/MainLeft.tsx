@@ -35,6 +35,7 @@ export default function MainLeft() {
         </label>
         {users !== null && (
           <CustomSelect
+            customPlaceholder="Search any user..."
             data={users}
             dataFilteredKey={"name"}
             dataSelected={setSelectedUser}

@@ -49,6 +49,7 @@ export default function MainRight() {
         </label>
         {countries !== null && (
           <CustomSelect
+            customPlaceholder="Search any country..."
             data={countries}
             dataFilteredKey={"country"}
             dataSelected={setSelectedCountry}
